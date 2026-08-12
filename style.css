@@ -6,7 +6,7 @@
   --tamanho-fonte: 20px;
   
   --cor-fundo-tela: #121212;
-  --cor-primaria: #FFEA00;
+  --cor-primaria: #922fb9;
   --cor-texto-principal: #FFFFFF;
   --cor-texto-invertido: #000000;
   
@@ -148,21 +148,22 @@ main h2 {
 
 .cards-grid {
   display: flex;
-  justify-content: center;
-  gap: 24px;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
 }
 
 /* =========================================
    5. FLASHCARDS E EFEITO 3D
    ========================================= */
 .cartao {
-  width: 280px;
-  height: 220px;
+  width: calc(280px * var(--escala-cartao));
+  height: calc(220px * var(--escala-cartao));
   perspective: 1200px;
   cursor: pointer;
-  transform: scale(var(--escala-cartao));
-  transition: transform 0.3s ease; 
+  flex: 0 0 auto;
+  transition: width 0.3s ease, height 0.3s ease;
 }
 
 .cartao-interno {
