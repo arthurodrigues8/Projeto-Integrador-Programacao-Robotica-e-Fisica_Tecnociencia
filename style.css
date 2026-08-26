@@ -5,13 +5,14 @@
   --escala-cartao: 1;
   --tamanho-fonte: 20px;
   
-  /* COR BASE: Amarelo sobre Fundo Cinza Escuro (Máximo contraste sem brilho excessivo) */
+  /* PADRÃO: Fundo e topo cinza-claro muito suave */
   --cor-fundo-tela: #121212;
-  --cor-primaria: #FFEA00;
+  --cor-cabecalho: #E0E0E0; /* Fundo bem claro no cabeçalho */
+  --cor-primaria: #FFFFFF;
   --cor-texto-principal: #FFFFFF;
-  --cor-texto-invertido: #000000;
+  --cor-texto-cabecalho: #121212; /* Texto escuro para contrastar no fundo claro */
   
-  --cor-frente-cartao: #1E1E1E;
+  --cor-frente-cartao: #1A1A1A;
   --cor-verso-cartao: #2A2A2A;
 }
 
@@ -39,20 +40,22 @@ body {
    3. CABEÇALHO E CONTROLES (LAYOUT DA FOTO)
    ========================================= */
 .cabecalho {
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-cabecalho);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 25px;
-  border-bottom: 4px solid var(--cor-texto-invertido);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   flex-wrap: wrap;
   gap: 15px;
+  transition: background-color 0.3s;
 }
 
 h1 {
-  color: var(--cor-texto-invertido);
+  color: var(--cor-texto-cabecalho);
   font-size: 28px; 
   margin: 0;
+  font-weight: 600;
   letter-spacing: 0.05em;
 }
 
@@ -74,10 +77,10 @@ h1 {
 .painel-cores button {
   padding: 8px 14px;
   cursor: pointer;
-  border: 2px solid var(--cor-texto-invertido);
+  border: 1px solid var(--cor-texto-cabecalho);
   border-radius: 6px;
-  background-color: #000000; 
-  color: var(--cor-primaria);
+  background-color: #ffffff; 
+  color: #121212;
   font-weight: bold;
   font-size: 14px;
   transition: all 0.2s;
@@ -85,9 +88,9 @@ h1 {
 
 .painel-cores button:hover,
 .painel-cores button:focus {
-  background-color: #FFFFFF; 
-  color: #000000;
-  outline: 2px solid #FFFFFF;
+  background-color: #121212; 
+  color: #ffffff;
+  outline: 2px solid #ffffff;
 }
 
 /* Botões de Aumentar (+) e Diminuir (-) */
@@ -97,9 +100,9 @@ h1 {
 }
 
 .controles-tamanho button {
-  background-color: var(--cor-texto-invertido);
-  color: var(--cor-primaria);
-  border: 2px solid var(--cor-texto-invertido);
+  background-color: var(--cor-texto-cabecalho);
+  color: var(--cor-cabecalho);
+  border: none;
   border-radius: 50%; 
   width: 42px;
   height: 42px;
@@ -113,9 +116,9 @@ h1 {
 
 .controles-tamanho button:hover,
 .controles-tamanho button:focus {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #000000;
-  outline: 3px solid #FFFFFF; 
+  outline: 2px solid #ffffff; 
 }
 
 /* =========================================
@@ -193,7 +196,7 @@ main h2 {
   width: 100%;
   height: 100%;
   border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
   backface-visibility: hidden; 
   display: flex;
   flex-direction: column;
@@ -220,12 +223,13 @@ main h2 {
 }
 
 footer {
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-cabecalho);
   padding: 15px 25px;
-  color: var(--cor-texto-invertido);
+  color: var(--cor-texto-cabecalho);
   text-align: center;
-  font-weight: 900;
-  border-top: 4px solid var(--cor-texto-invertido);
+  font-weight: 600;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s;
 }
 
 /* =========================================
@@ -242,32 +246,35 @@ footer {
   border: 0;
 }
 
-/* FILTRO 1: Azul Ciano (Excelente para baixa visão e daltonismo de vermelho/verde) */
-body.protanopia, body.deuteranopia {
-  --cor-fundo-tela: #0D1B2A;
-  --cor-primaria: #00E5FF;
-  --cor-texto-principal: #FFFFFF;
-  --cor-texto-invertido: #000000;
-  --cor-frente-cartao: #1B263B;
-  --cor-verso-cartao: #415A77;
+/* FILTRO 1: Rosa Pastel (Cabeçalho em tom pastel bem suave) */
+body.protanopia {
+  --cor-fundo-tela: #f8e3e9;
+  --cor-cabecalho: #facadb; /* Rosa bem claro e suave */
+  --cor-primaria: #dd7f9e;
+  --cor-texto-principal: #070707;
+  --cor-texto-cabecalho: #080808;
+  --cor-frente-cartao: #f7bcd2;
+  --cor-verso-cartao: #f1b6ca;
 }
 
-/* FILTRO 2: Rosa / Magenta Vibrante (Excelente para visão noturna e tritanopia) */
+/* FILTRO 2: Roxo Pastel (Cabeçalho em tom pastel bem suave) */
 body.tritanopia {
-  --cor-fundo-tela: #1A0914;
-  --cor-primaria: #FF2E93;
-  --cor-texto-principal: #FFFFFF;
-  --cor-texto-invertido: #000000;
-  --cor-frente-cartao: #2D1124;
-  --cor-verso-cartao: #4A1B3D;
+  --cor-fundo-tela: #EDE7F6;
+  --cor-cabecalho: #D1C4E9; /* Roxo bem claro e suave */
+  --cor-primaria: #c7b2ec;
+  --cor-texto-principal: #0a0a0a;
+  --cor-texto-cabecalho: #0f0f0f;
+  --cor-frente-cartao: #D1C4E9;
+  --cor-verso-cartao: #ddcff7;
 }
 
-/* FILTRO 3: Monocromático de Alto Contraste (Preto e Branco Puro) */
+/* FILTRO 3: Verde Pastel (Cabeçalho em tom pastel bem suave) */
 body.monocromatico {
-  --cor-fundo-tela: #000000;
-  --cor-primaria: #FFFFFF; 
-  --cor-texto-principal: #FFFFFF;
-  --cor-texto-invertido: #000000;
-  --cor-frente-cartao: #000000;
-  --cor-verso-cartao: #222222;
+  --cor-fundo-tela: #E8F5E9;
+  --cor-cabecalho: #83dddd; /* Verde bem claro e suave */
+  --cor-primaria: #abe2d0;
+  --cor-texto-principal: #0f0f0f;
+  --cor-texto-cabecalho: #0f0f0f;
+  --cor-frente-cartao: #C8E6C9;
+  --cor-verso-cartao: #b1dbb3d2;
 }
