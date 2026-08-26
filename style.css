@@ -5,8 +5,9 @@
   --escala-cartao: 1;
   --tamanho-fonte: 20px;
   
+  /* COR BASE: Amarelo sobre Fundo Cinza Escuro (Máximo contraste sem brilho excessivo) */
   --cor-fundo-tela: #121212;
-  --cor-primaria: #922fb9;
+  --cor-primaria: #FFEA00;
   --cor-texto-principal: #FFFFFF;
   --cor-texto-invertido: #000000;
   
@@ -148,22 +149,21 @@ main h2 {
 
 .cards-grid {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start;
   gap: 24px;
+  flex-wrap: wrap;
 }
 
 /* =========================================
    5. FLASHCARDS E EFEITO 3D
    ========================================= */
 .cartao {
-  width: calc(280px * var(--escala-cartao));
-  height: calc(220px * var(--escala-cartao));
+  width: 280px;
+  height: 220px;
   perspective: 1200px;
   cursor: pointer;
-  flex: 0 0 auto;
-  transition: width 0.3s ease, height 0.3s ease;
+  transform: scale(var(--escala-cartao));
+  transition: transform 0.3s ease; 
 }
 
 .cartao-interno {
@@ -215,7 +215,7 @@ main h2 {
 .cartao p {
   margin: 0;
   font-size: var(--tamanho-fonte);
-  font-weight: 500; 
+  font-weight: 600; 
   text-align: center;
 }
 
@@ -229,7 +229,7 @@ footer {
 }
 
 /* =========================================
-   6. ACESSIBILIDADE E TEMAS
+   6. ACESSIBILIDADE E TEMAS DE CORES
    ========================================= */
 .texto-leitor-tela {
   position: absolute;
@@ -242,14 +242,27 @@ footer {
   border: 0;
 }
 
+/* FILTRO 1: Azul Ciano (Excelente para baixa visão e daltonismo de vermelho/verde) */
 body.protanopia, body.deuteranopia {
-  --cor-primaria: #00A6FF;
+  --cor-fundo-tela: #0D1B2A;
+  --cor-primaria: #00E5FF;
+  --cor-texto-principal: #FFFFFF;
+  --cor-texto-invertido: #000000;
+  --cor-frente-cartao: #1B263B;
+  --cor-verso-cartao: #415A77;
 }
 
+/* FILTRO 2: Rosa / Magenta Vibrante (Excelente para visão noturna e tritanopia) */
 body.tritanopia {
-  --cor-primaria: #FF3366;
+  --cor-fundo-tela: #1A0914;
+  --cor-primaria: #FF2E93;
+  --cor-texto-principal: #FFFFFF;
+  --cor-texto-invertido: #000000;
+  --cor-frente-cartao: #2D1124;
+  --cor-verso-cartao: #4A1B3D;
 }
 
+/* FILTRO 3: Monocromático de Alto Contraste (Preto e Branco Puro) */
 body.monocromatico {
   --cor-fundo-tela: #000000;
   --cor-primaria: #FFFFFF; 

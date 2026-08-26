@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projeto Integrador - Flashcards</title>
+    <!-- Conecta o arquivo de estilos (CSS) -->
     <link rel="stylesheet" href="style.css" />
   </head> 
   <body> 
+    <!-- CABEÇALHO: Título e Controles alinhados conforme o esboço -->
     <header class="cabecalho"> 
       <h1>Projeto Integrador</h1> 
       
       <div class="opcoes-topo">
+        <!-- PAINEL DE CORES / FILTROS -->
         <div class="painel-cores" role="region" aria-label="Controles de contraste e cores">
           <button onclick="mudarTema('padrao')">Padrão</button>
           <button onclick="mudarTema('protanopia')">Filtro 1</button>
@@ -18,6 +21,7 @@
           <button onclick="mudarTema('monocromatico')">Filtro 3</button>
         </div>
 
+        <!-- BOTÕES DE ZOOM (+ e -) -->
         <div class="controles-tamanho">
           <button onclick="alterarTamanho(1)" title="Aumentar Tamanho da Letra e do Cartão">+</button>
           <button onclick="alterarTamanho(-1)" title="Diminuir Tamanho da Letra e do Cartão">-</button>
@@ -28,10 +32,12 @@
     <main> 
       <h2>Passe o mouse ou foque no cartão para ver a resposta</h2> 
 
+      <!-- SEÇÃO: FÍSICA E TECNOCIÊNCIA -->
       <section class="categoria">
         <h3 class="titulo-categoria">Física e Tecnociência</h3>
         <div class="cards-grid">
           
+          <!-- Card 1 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -45,6 +51,7 @@
             </div>
           </article>
 
+          <!-- Card 2 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -58,6 +65,7 @@
             </div>
           </article>
 
+          <!-- Card 3 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -71,6 +79,7 @@
             </div>
           </article>
 
+          <!-- Card 4 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -84,6 +93,7 @@
             </div>
           </article>
 
+          <!-- Card 5 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -100,10 +110,12 @@
         </div>
       </section>
 
+      <!-- SEÇÃO: ROBÓTICA -->
       <section class="categoria">
         <h3 class="titulo-categoria">Robótica</h3>
         <div class="cards-grid">
           
+          <!-- Card 1 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -117,6 +129,7 @@
             </div>
           </article>
 
+          <!-- Card 2 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -130,6 +143,7 @@
             </div>
           </article>
 
+          <!-- Card 3 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -143,6 +157,7 @@
             </div>
           </article>
 
+          <!-- Card 4 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -156,6 +171,7 @@
             </div>
           </article>
 
+          <!-- Card 5 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -172,10 +188,12 @@
         </div>
       </section>
 
+      <!-- SEÇÃO: PROGRAMAÇÃO -->
       <section class="categoria">
         <h3 class="titulo-categoria">Programação</h3>
         <div class="cards-grid">
           
+          <!-- Card 1 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -189,6 +207,7 @@
             </div>
           </article>
 
+          <!-- Card 2 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -202,6 +221,7 @@
             </div>
           </article>
 
+          <!-- Card 3 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -215,6 +235,7 @@
             </div>
           </article>
 
+          <!-- Card 4 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -228,6 +249,7 @@
             </div>
           </article>
 
+          <!-- Card 5 -->
           <article class="cartao" tabindex="0" aria-label="Flashcard interativo">
             <div class="cartao-interno">
               <div class="cartao-frente">
@@ -246,9 +268,10 @@
     </main> 
     
     <footer> 
-      <p>Projeto criado por: Arthur R. e Rafaela C.</p> 
+      <p>Projeto Integrador</p> 
     </footer> 
     
+    <!-- Conecta o arquivo JavaScript -->
     <script src="main.js"></script>
   </body> 
 </html>
