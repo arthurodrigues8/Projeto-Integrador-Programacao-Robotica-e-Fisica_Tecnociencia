@@ -75,14 +75,14 @@ h1 {
 }
 
 .painel-cores button {
-  padding: 8px 14px;
+  padding: 18px 14px;
   cursor: pointer;
   border: 1px solid var(--cor-texto-cabecalho);
   border-radius: 6px;
   background-color: #ffffff; 
-  color: #121212;
+  color: #1d1c1c;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
   transition: all 0.2s;
 }
 
@@ -155,17 +155,18 @@ main h2 {
   justify-content: center;
   gap: 24px;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 /* =========================================
    5. FLASHCARDS E EFEITO 3D
    ========================================= */
 .cartao {
-  width: 280px;
-  height: 220px;
+  width: min(100%, calc(280px * var(--escala-cartao)));
+  height: calc(220px * var(--escala-cartao));
+  flex: 0 1 calc(280px * var(--escala-cartao));
   perspective: 1200px;
   cursor: pointer;
-  transform: scale(var(--escala-cartao));
   transition: transform 0.3s ease; 
 }
 
@@ -204,6 +205,7 @@ main h2 {
   justify-content: center;
   padding: 20px;
   border: 3px solid var(--cor-primaria); 
+  overflow: hidden;
 }
 
 .cartao-frente {
@@ -216,10 +218,16 @@ main h2 {
 }
 
 .cartao p {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  min-height: 0;
   margin: 0;
   font-size: var(--tamanho-fonte);
   font-weight: 600; 
   text-align: center;
+  overflow-wrap: anywhere;
+  overflow-y: auto;
 }
 
 footer {
@@ -253,8 +261,8 @@ body.protanopia {
   --cor-primaria: #dd7f9e;
   --cor-texto-principal: #070707;
   --cor-texto-cabecalho: #080808;
-  --cor-frente-cartao: #f7bcd2;
-  --cor-verso-cartao: #f1b6ca;
+  --cor-frente-cartao: #f3c5d6;
+  --cor-verso-cartao: #f7c1d3;
 }
 
 /* FILTRO 2: Roxo Pastel (Cabeçalho em tom pastel bem suave) */
@@ -270,11 +278,11 @@ body.tritanopia {
 
 /* FILTRO 3: Verde Pastel (Cabeçalho em tom pastel bem suave) */
 body.monocromatico {
-  --cor-fundo-tela: #E8F5E9;
-  --cor-cabecalho: #83dddd; /* Verde bem claro e suave */
-  --cor-primaria: #abe2d0;
+  --cor-fundo-tela: #c9e5f7;
+  --cor-cabecalho: #9ad2f5; /* Verde bem claro e suave */
+  --cor-primaria: #74b2d8;
   --cor-texto-principal: #0f0f0f;
   --cor-texto-cabecalho: #0f0f0f;
-  --cor-frente-cartao: #C8E6C9;
-  --cor-verso-cartao: #b1dbb3d2;
+  --cor-frente-cartao: #bed8e9dc;
+  --cor-verso-cartao: #bedaebe7;
 }
